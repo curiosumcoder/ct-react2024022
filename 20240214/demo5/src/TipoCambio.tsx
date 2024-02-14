@@ -21,7 +21,7 @@ function TipoCambio() {
         }}
       />
 
-      <Compra />
+      <Compra cambioCompra={colones} />
 
     </div>
   );
