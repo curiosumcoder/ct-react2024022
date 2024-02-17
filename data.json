@@ -2423,6 +2423,12 @@
       "productName": "Demo 123",
       "unitPrice": "456",
       "quantityPerUnit": ""
+    },
+    {
+      "productName": "Piña Rosada",
+      "unitPrice": "5555",
+      "quantityPerUnit": "Caja de 30 Kg",
+      "id": 87
     }
   ]
 }

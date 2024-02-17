@@ -23,6 +23,7 @@ function ProductCreate({ onCreate }: productCreateProps) {
       setIsValid(form.current?.checkValidity() ?? false);
       console.log(target.validity);
       if (!target.validity.valid) {
+        target.classList.remove("invalid");
         target.classList.add("is-invalid");
       } else {
         target.classList.remove("is-invalid");
