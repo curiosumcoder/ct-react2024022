@@ -10,9 +10,9 @@ function HighOrderTest() {
     <>
       <hr />
       <h5>High-Order Components Test</h5>
-      <SimpleListWrapped/>
+      {/* <SimpleListWrapped/> */}
       {/* <TableListWrapped/> */}
-      {/* <TableList2/> */}
+      <TableList2/>
     </>
   );
 }

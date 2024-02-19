@@ -5,6 +5,7 @@ import IProduct from "../../models/IProduct";
 
 function HooksTest() {
   const [nameProps, setName] = useInput("");
+  console.log(nameProps); 
 
   const [{ data, isProcessing, isError }, doSearch] = useProductSearch();
 
@@ -17,6 +18,7 @@ function HooksTest() {
       <hr />
       <h5>HooksTest</h5>
       <p>
+        {/* <input type="text" value={name} onChange={(ev) => setName(ev.target.value)} /> */}
         <input type="text" {...nameProps} className="form-control-sm" />
         <br />
         {(nameProps as IInput<string>).value}
