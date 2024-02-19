@@ -33,7 +33,8 @@ function App() {
         )}
 
         {appState === AppState.Details &&  (
-          <ProductDetail id={productId} />
+          <ProductDetail id={productId} name={'Sandía'} price={55.5}
+          fn1={(msg)=> console.log('Executing function ... ' + msg)} />
         )}
 
         {appState === AppState.Edit &&  (
