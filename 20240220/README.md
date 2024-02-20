@@ -4,9 +4,10 @@
 * import 'bootstrap/dist/css/bootstrap.min.css'
 * import 'bootstrap-icons/font/bootstrap-icons.min.css'
 
+* .env
+	* VITE_API_URL=http://localhost:3000/products
 * vite build -> .env.production
 * vite build --mode staging -> .env.staging
-	* VITE_API_URL=http://localhost:3000/products
 
 * npm i json-server@0.17.4 -g
 * json-server .\data.json
