@@ -2429,6 +2429,12 @@
       "unitPrice": "5555",
       "quantityPerUnit": "Caja de 30 Kg",
       "id": 87
+    },
+    {
+      "productName": "Piña Rosada",
+      "unitPrice": "111",
+      "quantityPerUnit": "Caja de 20 Kg",
+      "id": 88
     }
   ]
 }
