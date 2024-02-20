@@ -2435,6 +2435,12 @@
       "unitPrice": "111",
       "quantityPerUnit": "Caja de 20 Kg",
       "id": 88
+    },
+    {
+      "productName": "Uvas",
+      "unitPrice": "3500",
+      "quantityPerUnit": "Cajas de 20 Kilos",
+      "id": 89
     }
   ]
 }

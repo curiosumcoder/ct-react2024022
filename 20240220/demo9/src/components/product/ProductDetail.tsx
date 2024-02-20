@@ -1,43 +1,36 @@
 import { useEffect, useMemo, useState } from "react";
 import IProduct from "../../models/IProduct";
 import ProductService from "../../services/ProductService";
+import { json, useLoaderData, useParams, useSearchParams } from "react-router-dom";
 
-type productDetailProps = {
-  id: number;
-  name: string;
-  price: number;
-  fn1?: (msg:string) => void;
-};
+function ProductDetail() {
+  // Para querystring
+  const [searchParams, ] = useSearchParams(); // ?p1=ABC
+  console.log('searchParams: ' + searchParams.get('name'));
 
-function ProductDetail({ id }: {id:number}) {
+  // Opción #1
+  // const ps = useMemo(() => new ProductService(), []);
+  // const [product, setProduct] = useState<IProduct | null>();
 
-// function ProductDetail({ id, name, price, fn1 }: productDetailProps) {
-  //function ProductDetail({id, name, price}:{id:number, name:string, price:number}) {
+  // const parametros = useParams();
+  // console.log('useParams: ' + JSON.stringify(parametros));
 
-  // console.log(name, price);
-  // fn1?.('esta es una prueba');
+  // const { id } = useParams();
 
-  // console.log(props)
-  // console.log(`${props.id}, ${props.name}, ${props.price}`)
+  // useEffect(() => {
+  //   console.log("After render component ...");
 
-  // const {id:productId, name, price} = props; // Destructuring
-  // console.log(`${productId}, ${name}, ${price}`)
+  //   (async () => {
+  //     setProduct(await ps.get(Number(id)));
+  //   })();
 
-  const ps = useMemo(() => new ProductService(), []);
-  const [product, setProduct] = useState<IProduct | null>();
+  //   return () => {
+  //     console.log("Clean-up component ...");
+  //   };
+  // }, [ps, id]);
 
-  //const id = 1;
-  useEffect(() => {
-    console.log("After render component ...");
-
-    (async () => {
-      setProduct(await ps.get(id));
-    })();
-
-    return () => {
-      console.log("Clean-up component ...");
-    };
-  }, [ps, id]);
+  // Opción 2
+  const product: IProduct = useLoaderData() as IProduct;
 
   return (
     <>
@@ -68,8 +61,3 @@ function ProductDetail({ id }: {id:number}) {
 }
 
 export default ProductDetail;
-
-// function suma(a:number,b:number) {
-//   return a + b;
-// }
-// suma({},'2');

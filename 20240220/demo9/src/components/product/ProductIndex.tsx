@@ -19,7 +19,8 @@ function ProductIndex() {
         Create
       </Link>
       <div className="mt-3 mb-3">
-        <input type="search" {...filterProps} className="form-control" placeholder="Type here ..." />
+        <input type="search" {...filterProps} className="form-control" 
+        placeholder="Type here ..." />
       </div>
       <ProductList products={data} />
     </>
