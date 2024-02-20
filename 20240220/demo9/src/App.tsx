@@ -1,6 +1,6 @@
-import { Outlet, useNavigation } from 'react-router-dom'
-import './App.css'
-import Header from './Header'
+import { Outlet, useNavigation } from "react-router-dom";
+import "./App.css";
+import Header from "./Header";
 
 function App() {
   const navigation = useNavigation();
@@ -8,11 +8,16 @@ function App() {
     <>
       <Header />
       <div className="container" style={{ marginTop: "2em" }}>
-        <div id="overlay" className={navigation.state === "loading" ? "loading" : ""}>Processing ...</div>
+        <div
+          id="overlay"
+          className={navigation.state === "loading" ? "loading" : ""}
+        >
+          Processing ...
+        </div>
         <Outlet />
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

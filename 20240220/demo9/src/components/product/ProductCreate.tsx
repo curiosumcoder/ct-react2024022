@@ -42,6 +42,8 @@ function ProductCreate() {
     <>
       <h6>Product Create</h6>
       {/* {JSON.stringify(product)} */}
+      <button type="button" className="btn btn-secondary" 
+      onClick={() => {navigate(-1)}}>Cancel</button>
       <form onSubmit={(event) => handleSubmit(event)} ref={form}>
         <div className="mb-3">
           <label htmlFor="iName" className="form-label">
