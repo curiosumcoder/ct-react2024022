@@ -27,7 +27,7 @@ const productSlice = createSlice({
       })
       .addCase(searchProducts.rejected, (state) => {
         state.fetchStatus = "error";
-      });
+      })
   },
 });
 

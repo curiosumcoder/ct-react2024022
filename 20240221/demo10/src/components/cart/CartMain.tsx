@@ -7,7 +7,7 @@ function CartMain() {
   // Redux/Redux Toolkit
   // Read from state on global store
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { items } = useSelector((state: any) => state.cart);
+  const { items } = useSelector((store: any) => store.cart);
   // Update state in global store
   const { clearCart, removeFromCart } = cartSlice.actions;
   // To execute actions on store
