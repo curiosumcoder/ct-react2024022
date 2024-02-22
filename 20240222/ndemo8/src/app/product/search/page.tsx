@@ -1,10 +1,12 @@
 import React from 'react'
 
 export default function ProductSearch() {
-    
+
     async function handleSubmit(fd: FormData) {
         'use server'
-        console.log(`Searching ...${fd.get('filter')?.valueOf()}`)
+        const filter = fd.get('filter')?.valueOf() ?? ''
+
+        console.log(`Searching ...${filter}`)
     }
 
   return (
