@@ -27,9 +27,16 @@ export async function PUT(request: NextRequest)
     const product = await request.json();
     const pD = new ProductData();
 
-    await pD.update(product);
+    const affected = await pD.update(product);
 
-    return new Response('', {status: 200});
+    if (affected > 0)
+    {
+      return new Response("", { status: 200 });
+    }
+    else  
+    {
+      return new Response("", { status: 404 });
+    }
     
     // return new Response("PUT READY!", {status: 200});
 }

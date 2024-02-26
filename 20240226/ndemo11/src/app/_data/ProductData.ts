@@ -116,7 +116,7 @@ export default class ProductData {
   }
 
   update(p: IProduct) {
-    return new Promise<void>((resolve, reject) => {
+    return new Promise<number>((resolve, reject) => {
       let result: IProduct;
 
       console.log(p);
@@ -135,7 +135,7 @@ export default class ProductData {
           if (err) {
             reject(err);
           } else {
-            resolve();
+            resolve(this.changes);
           }
 
           // close the database connection
@@ -146,7 +146,7 @@ export default class ProductData {
   }
 
   delete(id: number) {
-    return new Promise<void>((resolve, reject) => {
+    return new Promise<number>((resolve, reject) => {
       //sqlite3.verbose();
       let db = new sqlite3.Database(dbFilePath);
 
@@ -156,7 +156,7 @@ export default class ProductData {
         if (err) {
           reject(err);
         } else {
-          resolve();
+          resolve(this.changes);
         }
 
         // close the database connection

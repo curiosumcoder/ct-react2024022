@@ -24,9 +24,16 @@ export async function DELETE(request: NextRequest, { params }: productParams) {
   const { id } = params;
 
   const pD = new ProductData();
-  await pD.delete(id);
+  const affected = await pD.delete(id);
 
-  return new Response("", { status: 200 });
+  if (affected > 0)
+  {
+    return new Response("", { status: 200 });
+  }
+  else  
+  {
+    return new Response("", { status: 404 });
+  }
 
   //return new Response(`DELETE ${id} READY!`, {status: 200});
 }
