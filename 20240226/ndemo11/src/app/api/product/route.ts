@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
       const result = await pD.create(product);
       return Response.json(result);
     } else {
-        // Fill validation issues evidence
+      // Fill validation issues evidence
       let validation: Array<{ id: string; msg: string }> = [];
       parse.error.errors.forEach((errorDetail, index) => {
         validation.push({
@@ -25,27 +25,10 @@ export async function POST(request: NextRequest) {
         });
       });
 
-      return Response.json(validation, { status: 400 });
+      return Response.json(validation, { status: 400 }); // 400 Bad Request
     }
-
-  } catch (error:any) {    
-    return new Response('', { status: 500 });
+  } catch (error: any) {
+    return new Response("", { status: 500 }); // 500 Internal Server Error
   }
   // return new Response("POST READY!", {status: 200});
-}
-
-// PUT http://localhost:3000/api/product
-export async function PUT(request: NextRequest) {
-  const product = await request.json();
-  const pD = new ProductData();
-
-  const affected = await pD.update(product);
-
-  if (affected > 0) {
-    return new Response("", { status: 200 });
-  } else {
-    return new Response("", { status: 404 });
-  }
-
-  // return new Response("PUT READY!", {status: 200});
 }
