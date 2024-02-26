@@ -28,8 +28,8 @@ export async function POST(request: NextRequest) {
       return Response.json(validation, { status: 400 });
     }
 
-  } catch (error) {
-    return new Response("", { status: 500 });
+  } catch (error:any) {    
+    return new Response('', { status: 500 });
   }
   // return new Response("POST READY!", {status: 200});
 }
