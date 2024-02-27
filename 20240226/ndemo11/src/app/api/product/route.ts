@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     } else {
       // Fill validation issues evidence
       let validation: Array<{ id: string; msg: string }> = [];
-      parse.error.errors.forEach((errorDetail, index) => {
+      parse.error.errors.forEach((errorDetail:any, index:number) => {
         validation.push({
           id: errorDetail.path.join("."),
           msg: errorDetail.message,
