@@ -2,17 +2,12 @@
 
 import IProduct, { IProductSchema } from "@/app/_models/IProduct";
 import ProductService from "@/app/_services/ProductService";
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-
-function sleep(ms:number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
 
 export async function productCreate(fd: FormData) {
   "use server";
   console.log("productCreate: Creating product ...");
-
-  await sleep(2000);
 
   const productName = fd.get("productName")?.valueOf();
   const quantityPerUnit = fd.get("quantityPerUnit")?.valueOf();
@@ -24,6 +19,7 @@ export async function productCreate(fd: FormData) {
   const pS = new ProductService();
   await pS.save(product);
 
+  revalidatePath("/product");
   redirect("/product");
 }
 
