@@ -55,7 +55,7 @@ export default async function ProductIndex({ searchParams }: piParams) {
                   <td>{p.productName}</td>
                   <td>{p.unitPrice}</td>
                   <td>
-                    <Link href={`/product/detail/${p.id}`} prefetch={true}>
+                    <Link href={`/product/detail/${p.id}`}>
                       <i
                         className="bi bi-caret-right"
                         style={{ color: "green", cursor: "pointer" }}

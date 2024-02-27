@@ -11,7 +11,7 @@ export default class ProductService {
     const response = await fetch(`${PRODUCT_URL}/${id}`, { cache: 'no-store' });
     //const response = await fetch(`${PRODUCT_URL}/${id}`, { next: { revalidate: 60 } });
 
-    if (response.ok) {
+   if (response.ok) {
       let data = await response.json();
       return data;
     }

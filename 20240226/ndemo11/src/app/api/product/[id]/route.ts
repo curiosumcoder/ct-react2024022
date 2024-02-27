@@ -35,7 +35,7 @@ export async function PUT(request: NextRequest, { params }: productParams) {
     try {
 
         if (Number(id) !== product.id) {
-            return new Response("AQUI", { status: 400 }); // 400 Bad Request
+            return new Response("", { status: 400 }); // 400 Bad Request
         }
   
       // Data validation
