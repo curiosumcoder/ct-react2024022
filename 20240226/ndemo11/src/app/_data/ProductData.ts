@@ -15,7 +15,7 @@ export default class ProductData {
         UnitPrice, UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued 
         FROM Products WHERE ProductID = ?`;
 
-      console.log(`Quering with if ${id} ...`);
+      console.log(`Querying with id: ${id} ... ${new Date().toLocaleTimeString()}`);
 
       db.get(sql, [id], (err: any, row: any) => {
         if (err) {
@@ -49,7 +49,7 @@ export default class ProductData {
       FROM Products WHERE ProductName LIKE ?`;
 
       filter = `%${filter}%`;
-      console.log(`Quering with filter ${filter} ...`);
+      console.log(`Querying with filter: ${filter} ... ${new Date().toLocaleTimeString()}`);
 
       db.all(sql, [filter], (err: any, rows: any) => {
         if (err) {
